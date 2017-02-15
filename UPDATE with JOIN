@@ -1,9 +1,0 @@
-UPDATE [MaterialiCST_TEST].[CST].[materiale]
-   SET [eliminato] = 1
-      ,[data_modifica] = GETDATE()
-      ,[utente_modifica] = @utente_modifica
-	FROM [MaterialiCST_TEST].[CST].[materiale] A
-	JOIN [MaterialiCST_TEST].[CST].[locale_materiale] B
-		ON A.id_materiale = B.id_materiale
-WHERE A.id_materiale = @id_materiale 
-	AND B.id_locale_stabile = @id_locale_stabile
